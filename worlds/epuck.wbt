@@ -1,0 +1,254 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+  info [
+    "Simulation showing the KUKA youBot model"
+  ]
+  basicTimeStep 16
+  coordinateSystem "NUE"
+  contactProperties [
+    ContactProperties {
+      material2 "box"
+      coulombFriction [
+        10
+      ]
+    }
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.025785913710655622 -0.024197118534993435 0.9993745974902055 4.711805966089699
+  position 0.903640229118722 27.59389571975717 0.8719137175494309
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF e-puck E-puck {
+  translation 0.395254 0.00200864 -2.56561
+  rotation -0.9999995432272505 0.0007854280727424267 -0.0005446540488521077 1.5700952863786837
+  controller "<extern>"
+  supervisor TRUE
+  camera_fieldOfView 2
+  camera_width 640
+  camera_height 240
+  camera_rotation 0 1 0 1.57
+  turretSlot [
+    Compass {
+    }
+    InertialUnit {
+    }
+    GPS {
+    }
+  ]
+}
+DEF Map_Cells Group {
+  children [
+    DEF C27 Transform {
+      translation -7.36 0 -2.56
+    }
+    DEF C26 Transform {
+      translation -4.52 0 -2.56
+    }
+    DEF C25 Transform {
+      translation -0.31 0 -2.56
+    }
+    DEF C24 Transform {
+      translation 1.78 0 -2.56
+    }
+    DEF C23 Transform {
+      translation 3.72 0 -2.56
+    }
+    DEF C22 Transform {
+      translation 5.52 0 -2.56
+    }
+    DEF C21 Transform {
+      translation 7.81 0 -2.56
+    }
+    DEF C20 Transform {
+      translation -4.53 0 -0.77
+    }
+    DEF C19 Transform {
+      translation -2.71 0 -0.77
+    }
+    DEF C18 Transform {
+      translation -0.31 0 -0.79
+    }
+    DEF C17 Transform {
+      translation 3.72 0 -0.91
+    }
+    DEF C16 Transform {
+      translation 5.52 0 -0.91
+    }
+    DEF C15 Transform {
+      translation 7.81 0 -0.9
+    }
+    DEF C14 Transform {
+      translation -7.17 0 0.89
+    }
+    DEF C13 Transform {
+      translation -4.5 0 0.89
+    }
+    DEF C12 Transform {
+      translation -2.7 0 0.67
+    }
+    DEF C11 Transform {
+      translation 0.91 0 0.89
+    }
+    DEF C10 Transform {
+      translation 1.92 0 0.89
+    }
+    DEF C9 Transform {
+      translation 3.72 0 0.89
+    }
+    DEF C8 Transform {
+      translation 5.52 0 0.89
+    }
+    DEF C7 Transform {
+      translation 7.81 0 0.89
+    }
+    DEF C6 Transform {
+      translation -2.81 0 2.5
+    }
+    DEF C5 Transform {
+      translation 0.92 0 2.68
+    }
+    DEF C4 Transform {
+      translation 1.93 0 2.68
+    }
+    DEF C3 Transform {
+      translation 3.74 0 2.68
+    }
+    DEF C2 Transform {
+      translation 5.52 0 2.68
+    }
+    DEF C1 Transform {
+      translation 7.81 0 3.37
+    }
+  ]
+}
+DEF MAP Group {
+  children [
+    Solid {
+      translation -9.9 0 0
+      rotation 0 1 0 1.57
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0
+            }
+          }
+          geometry Box {
+            size 20 0.5 1
+          }
+        }
+      ]
+      name "WALL(2)"
+    }
+    Solid {
+      translation 0 0 4.9
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0
+            }
+          }
+          geometry Box {
+            size 20 0.5 1
+          }
+        }
+      ]
+      name "WALL(5)"
+    }
+    Solid {
+      translation -5.71 -0.001 -11.13
+      rotation 3.3891510791584073e-09 0.7073882252434113 0.7068252250641434 3.14159
+      scale 0.15 0.15 0.15
+      children [
+        Shape {
+          geometry Mesh {
+            url [
+              "tinker.obj"
+            ]
+          }
+        }
+      ]
+      name "LINES"
+    }
+    Solid {
+      translation 0 0 -4.9
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0
+            }
+          }
+          geometry Box {
+            size 20 0.5 1
+          }
+        }
+      ]
+      name "WALL(4)"
+    }
+    Solid {
+      translation 9.9 0 0
+      rotation 0 1 0 1.57
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0
+            }
+          }
+          geometry Box {
+            size 20 0.5 1
+          }
+        }
+      ]
+      name "WALL(1)"
+    }
+    Floor {
+      rotation 1 0 0 -1.57
+      size 20 10
+      tileSize 1 1
+      appearance Parquetry {
+        type "dark strip"
+        colorOverride 0 0 0
+        textureTransform TextureTransform {
+        }
+      }
+    }
+  ]
+}
